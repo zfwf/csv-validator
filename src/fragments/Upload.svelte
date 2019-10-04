@@ -12,5 +12,5 @@
 </style>
 
 <section>
-  <h1>csv</h1>
+  <h1>Upload</h1>
 </section>
