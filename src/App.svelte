@@ -1,10 +1,26 @@
 <script>
+  import PageContainer from "./components/PageContainer.svelte";
+  // Import the router component
+  // Normally, this would be import: `import Router from 'svelte-spa-router'`
+  import Router from "svelte-spa-router";
+  // Import the "link" action and the methods to control history programmatically from the same module, as well as the location store
+  import {
+    link,
+    push,
+    pop,
+    replace,
+    location,
+    querystring
+  } from "svelte-spa-router";
+
+  import routes from "./routes-obj";
   export let name;
 </script>
 
 <style>
   .top-bar {
     position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -49,8 +65,6 @@
     height: 32px;
     margin-top: 24px;
     margin-bottom: 24px;
-
-    background: url("./image.png");
   }
   .left-well {
     padding-left: 32px;
@@ -66,9 +80,13 @@
   <nav>
     <ul>
       <li class="header-nav-item">
-        <a>tax report</a>
+        <a href="/taxreport">tax report</a>
       </li>
     </ul>
   </nav>
-  <img class="user-icon" alt="the user image" />
+  <img class="user-icon" src="/image.png" alt="the user image" />
 </header>
+
+<PageContainer>
+  <Router {routes} />
+</PageContainer>
