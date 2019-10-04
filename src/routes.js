@@ -7,7 +7,7 @@ const routes = new Map();
 routes.set('/', TaxReport);
 
 // allow children to also signal link activation
-// routes.set('/taxreport', TaxReport);
+routes.set('/taxreport', TaxReport);
 routes.set('/taxreport/*', TaxReport);
 
 // using named parameters, with last being optional

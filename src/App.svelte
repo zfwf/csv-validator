@@ -13,7 +13,7 @@
     querystring
   } from "svelte-spa-router";
 
-  import routes from "./routes-obj";
+  import routes from "./routes";
   export let name;
 </script>
 
@@ -80,7 +80,7 @@
   <nav>
     <ul>
       <li class="header-nav-item">
-        <a href="/taxreport">tax report</a>
+        <a href="/taxreport" use:link>tax report</a>
       </li>
     </ul>
   </nav>
